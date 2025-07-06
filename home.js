@@ -175,7 +175,6 @@ function parse(expr){
             expr = expr.slice(0, i) + "0" + expr.slice(i);
         }
     }
-
     return expr;
 }
 
@@ -244,15 +243,15 @@ function calculate(expr){
                         let op1 = operands.pop();
                         operands.push(calculate(op1) ** calculate(op2));
                     }
-                    else if(op == "s") operands.push(Math.sin(calculate(op2)));
-                    else if(op == "c") operands.push(Math.cos(calculate(op2)));
-                    else if(op == "t") operands.push(Math.tan(calculate(op2)));
-                    else if(op == "S") operands.push(Math.asin(calculate(op2)));
-                    else if(op == "C") operands.push(Math.acos(calculate(op2)));
-                    else if(op == "T") operands.push(Math.atan(calculate(op2)));
+                    else if(op == "s") operands.push(Math.sin(calculate(op2) * (radbool? 1: (PI/180))));
+                    else if(op == "c") operands.push(Math.cos(calculate(op2) * (radbool? 1: (PI/180))));
+                    else if(op == "t") operands.push(Math.tan(calculate(op2) * (radbool? 1: (PI/180))));
+                    else if(op == "S") operands.push(Math.asin(calculate(op2)) * (radbool? 1: (180/PI)));
+                    else if(op == "C") operands.push(Math.acos(calculate(op2)) * (radbool? 1: (180/PI)));
+                    else if(op == "T") operands.push(Math.atan(calculate(op2)) * (radbool? 1: (180/PI)));
                     else if(op == "l") operands.push(Math.log10(calculate(op2)));
                     else if(op == "L") operands.push(Math.log(calculate(op2)));
-                    else if(op == "!")operands.push(factorial(calculate(op2)));
+                    else if(op == "!") operands.push(factorial(calculate(op2)));
                 }
                 operators.push(expr.charAt(i));
             }

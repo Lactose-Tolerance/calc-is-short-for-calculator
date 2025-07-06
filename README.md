@@ -17,7 +17,7 @@ This is a simple scientific calculator web app made using HTML, CSS and JavaScri
 
 ## Try It Out!
 
-[I'm still working on this!]
+![Try Calculator Demo](https://lactose-tolerance.github.io/calc-is-short-for-calculator/)
 
 ## Getting Started!
 
@@ -29,4 +29,4 @@ git clone https://github.com/Lactose-Tolerance/calc-is-short-for-calculator
 
 **2. Make sure the .html, .css, .js and .png files are in the same directory**
 
-**3. Open home.html in your browser**
+**3. Open index.html in your browser**
